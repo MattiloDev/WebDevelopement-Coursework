@@ -43,57 +43,67 @@
 	</style>
 	<script>
 	
-	function Total() { // gets the values from the three textboxes and adds them together before outputint the value to the 'total' textbox
+
 	
-	var bench = document.getElementById ("TxtBench").value;
-	var squat = document.getElementById ("TxtSquat").value;
-	var deadlift = document.getElementById ("TxtDeadlift").value;
 	
-	var liftTotal;
+	function Wilks() {
 	
-	liftTotal = parseInt(bench)+parseInt(squat)+parseInt(deadlift); 
-	document.getElementById ("TxtTotal").value = liftTotal;
+		var liftTotal = 0.0;
+		var wilksValue = 0.0;
+	
+ 
+		var bench = document.getElementById ("TxtBench").value;
+		var squat = document.getElementById ("TxtSquat").value;
+		var deadlift = document.getElementById ("TxtDeadlift").value;
+		liftTotal = parseInt(bench)+parseInt(squat)+parseInt(deadlift); 
 		
-	}
+		var bodyWeight = document.getElementById ('TxtBodyWeight').value;
 	
-	function calculateWilksCo() { // function calculates the wilks coefficient https://en.wikipedia.org/wiki/Wilks_Coefficient values from here 
+		var a = -216.0475144;
+		var b = 16.2606339;
+		var c = -0.002388645;
+		var d = -0.00113732;
+		var e = 0.00000701863;
+		var f = 0.00000001291;
+		
+		var aCo = 0.0000;
+		var bCo = 0.0000;
+		var cCo = 0.0000;
+		var dCo = 0.0000;
+		var eCo = 0.0000;
+		var fCo = 0.0000;
 	
-	var bodyWeight = document.getElementById ('TxtBodyWeight').value;
+		aCo = a;
+		bCo = b * bodyWeight;
+		cCo = c * bodyWeight * bodyWeight;
+		dCo = d * bodyWeight * bodyWeight * bodyWeight;
+		eCo = e * bodyWeight * bodyWeight * bodyWeight * bodyWeight;
+		fCo = f * bodyWeight * bodyWeight * bodyWeight * bodyWeight *bodyWeight;
 	
-	var a = -216.0475144;
-	var b = 16.2606339;
-	var c = -0.002388645;
-	var d = -0.00113732;
-	var e = 0.00000701863;
-	var f = 0.00000001291;
-	
-	var aCo = a * bodyWeight;
-
-
-	
-	
+		var CoTotal = 0.0000;
+		
+		CoTotal = aCo + bCo + cCo + dCo + eCo + fCo;
+		wilksValue = 500/CoTotal;
+		
+		var Wilks = parseInt(liftTotal)*parseFloat(wilksValue);
+		document.getElementById ("TxtTotal").value = Wilks;
 	
 	}
 	
 	function Test () {
 	
-	var Testele = 50;
-	
-	
-	
-	document.getElementById ("TxtTotal").value = Testele;
-	
+		var bw = 66;
+		var b = 16.2606339;
+		var bCo = 0.0;
+		bCo = parseFloat(b * bw);
+		document.getElementById ("TxtTotal").value = bCo;
+		
+		
 	}
 	
-	document.getElementById("BtnCalculate").addEventListener("click", Total);
 	
-
+	document.getElementById("BtnCalculate").addEventListener("click", Wilks);
 	
-	var bench = TxtBench.value;
-	var squat = TxtSquat.value;
-	var deadlift = TxtDeadlift.value;
-	
-	var liftTotal;
 	
 	
 	</script>
