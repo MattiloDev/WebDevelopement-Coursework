@@ -1,0 +1,119 @@
+<!DOCTYPE = HTML>
+
+
+<html>
+
+
+
+
+	<head>
+	
+	
+	<script>
+	
+	
+	
+	
+	</script>
+	
+	<style>
+	
+	
+	</style>
+		
+	
+	
+	</head>
+	
+	
+	
+	<body>
+	
+	<h1> Wilks Calculator </h1>
+	
+	  Bench Press: <input type="text" id = "TxtBench"  value=""><br>
+	  Squat: <input type="text" id = "TxtSquat"  value=""><br>
+	  Deadlift: <input type="text" id = "TxtDeadlift"  value=""><br>
+	  Body Weight: <input type="text" id = "TxtBodyWeight" value=""><br> <br>
+	  <button id = "BtnCalculate" type="button"> Calculate Wilks </button> <br> <br>
+	  Total: <input type="text" id = "TxtTotal" value="" readonly = "true"> <br>
+	  Wilks: <input type="text" id = "TxtWilks" value="" readonly = "true"> <br>
+	
+	<style>
+	</style>
+	<script>
+	
+	function Total() { // gets the values from the three textboxes and adds them together before outputint the value to the 'total' textbox
+	
+	var bench = document.getElementById ("TxtBench").value;
+	var squat = document.getElementById ("TxtSquat").value;
+	var deadlift = document.getElementById ("TxtDeadlift").value;
+	
+	var liftTotal;
+	
+	liftTotal = parseInt(bench)+parseInt(squat)+parseInt(deadlift); 
+	document.getElementById ("TxtTotal").value = liftTotal;
+		
+	}
+	
+	function calculateWilksCo() { // function calculates the wilks coefficient https://en.wikipedia.org/wiki/Wilks_Coefficient values from here 
+	
+	var bodyWeight = document.getElementById ('TxtBodyWeight').value;
+	
+	var a = -216.0475144;
+	var b = 16.2606339;
+	var c = -0.002388645;
+	var d = -0.00113732;
+	var e = 0.00000701863;
+	var f = 0.00000001291;
+	
+	var aCo = a * bodyWeight;
+
+
+	
+	
+	
+	}
+	
+	function Test () {
+	
+	var Testele = 50;
+	
+	
+	
+	document.getElementById ("TxtTotal").value = Testele;
+	
+	}
+	
+	document.getElementById("BtnCalculate").addEventListener("click", Total);
+	
+
+	
+	var bench = TxtBench.value;
+	var squat = TxtSquat.value;
+	var deadlift = TxtDeadlift.value;
+	
+	var liftTotal;
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	</body>
+	
+	
+	
+	
+	
+</html>
+	
+	
+	
+	
+	
