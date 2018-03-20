@@ -31,32 +31,54 @@
 	
 	<h1> Wilks Calculator </h1>
 	
-	  Bench Press: <input type="text" id = "TxtBench"  value=""><br>
-	  Squat: <input type="text" id = "TxtSquat"  value=""><br>
-	  Deadlift: <input type="text" id = "TxtDeadlift"  value=""><br>
-	  Body Weight: <input type="text" id = "TxtBodyWeight" value=""><br> <br>
-	  <button id = "BtnCalculate" type="button"> Calculate Wilks </button> <br> <br>
-	  Total: <input type="text" id = "TxtTotal" value="" readonly = "true"> <br>
-	  Wilks: <input type="text" id = "TxtWilks" value="" readonly = "true"> <br>
+	<form>
+	Bench Press:<br>
+	<input type="text" id = "TxtBench"  value=""><br>
+	
+	Squat:<br>
+	<input type="text" id = "TxtSquat"  value=""><br>
+	
+	Deadlift: <br>
+	<input type="text" id = "TxtDeadlift"  value=""><br>
+	
+	Body Weight: <br>
+	<input type="text" id = "TxtBodyWeight" value=""><br> <br>
+	
+	<button id = "BtnCalculate" type="button"> Calculate Wilks </button> <br> <br>
+	 
+	Total: <br> 
+	<input type="text" id = "TxtTotal" value="" step = "0.1" readonly = "true"> <br>
+	
+	Wilks: <br>
+	<input type="text" id = "TxtWilks" value="" step = "0.1" readonly = "true"> <br>
+	
+	</form>
 	
 	<style>
 	</style>
 	<script>
 	
 
+	var liftTotal= 0.0;
 	
+	function Total() {
 	
-	function Wilks() {
-	
-		var liftTotal = 0.0;
-		var wilksValue = 0.0;
-	
- 
 		var bench = document.getElementById ("TxtBench").value;
 		var squat = document.getElementById ("TxtSquat").value;
 		var deadlift = document.getElementById ("TxtDeadlift").value;
 		liftTotal = parseInt(bench)+parseInt(squat)+parseInt(deadlift); 
 		
+		document.getElementById ("TxtTotal").value = liftTotal;
+		
+		Wilks();
+	
+	}
+	
+	
+	function Wilks() {
+	
+		
+		var wilksValue = 0.0;
 		var bodyWeight = document.getElementById ('TxtBodyWeight').value;
 	
 		var a = -216.0475144;
@@ -86,7 +108,8 @@
 		wilksValue = 500/CoTotal;
 		
 		var Wilks = parseInt(liftTotal)*parseFloat(wilksValue);
-		document.getElementById ("TxtTotal").value = Wilks;
+		parseFloat('Wilks').toFixed(2);
+		document.getElementById ("TxtWilks").value = Wilks;
 	
 	}
 	
@@ -102,7 +125,7 @@
 	}
 	
 	
-	document.getElementById("BtnCalculate").addEventListener("click", Wilks);
+	document.getElementById("BtnCalculate").addEventListener("click", Total);
 	
 	
 	
