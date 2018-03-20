@@ -31,6 +31,13 @@
 	
 	<style>
 	
+	body {
+	
+	font-family: Arial, Helvetica, sans-serif;	
+
+	}
+	
+	
 	ul {
 	
 	list-style-type: none;
@@ -45,12 +52,13 @@
 	text-decoration: none;
 	display:block;
 	text-align: center;
+	padding-left:0px;
 	padding: 15px;
 	
 	
 	}
 	
-	li a:hover:not(.active) {
+	li a:hover {
 	
 	background-color:bfbfbf;
 	
@@ -68,6 +76,29 @@
 	float: left;
 	
 	}
+	
+	
+	input[type=text], select {
+	
+	padding: 6px 10px;
+	margin: 6px;
+	
+	
+	
+	}
+	
+	
+	
+	
+	}
+	
+	button {
+	
+	
+	
+	}
+	
+	
 	
 	
 	
@@ -89,16 +120,16 @@
 	<form>
 	
 	Bench Press:<br>
-	<input type="text" id = "TxtBench"  value=""><br>
+	<input type="text" id = "TxtBench"><br>
 	
 	Squat:<br>
-	<input type="text" id = "TxtSquat"  value=""><br>
+	<input type="text" id = "TxtSquat"><br>
 	
 	Deadlift: <br>
-	<input type="text" id = "TxtDeadlift"  value=""><br>
+	<input type="text" id = "TxtDeadlift"><br>
 	
 	Body Weight: <br>
-	<input type="text" id = "TxtBodyWeight" value=""><br> <br>
+	<input type="text" id = "TxtBodyWeight"><br> <br>
 	
 	<button id = "BtnCalculate" type="button"> Calculate Wilks </button> <br> <br>
 	 
