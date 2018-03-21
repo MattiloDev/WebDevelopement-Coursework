@@ -43,7 +43,7 @@
 	ul {
 	
 	list-style-type: none;
-	background-color: #f2f2f2;
+	background-color: #47474c;
 	margin: 0px;
 	margin-top: 0px;
 	padding: 0;
@@ -58,14 +58,15 @@
 	text-align: center;
 	padding-left:0px;
 	padding: 15px;
-	color: black;
+	color: white;
+	
 	
 	
 	}
 	
 	li a:hover {
 	
-	background-color:bfecff;
+	background-color:8c9b9e;
 	
 	}
 	
@@ -124,6 +125,13 @@
 	
 	}
 	
+	.currentPage {
+	
+	background-color: #09aef4;
+	
+	
+	}
+	
 	
 	
 	
@@ -133,7 +141,7 @@
 	
 	<ul>
 	
-		<li> <a href = "CourseWork.html"> Wilks Calculator </a> </li>
+		<li> <a href = "CourseWork.html" class = "currentPage" > Wilks Calculator </a> </li>
 		<li> <a href = "WilksInfo.html"> What is Wilks </a> </li>
 		<li> <a href = "About.html"> About </a> </li> 
 		<li> <a href = "Settings.html"> Settings </a> </li>
@@ -148,13 +156,13 @@
 	<form>
 	
 	Bench Press:<br>
-	<input type="text" id = "TxtBench"><br>
+	<input type="text" id = "TxtBenchValue"> X  <select name="BenchReps"> <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtBench" readonly = "true">  <br>
 	
 	Squat:<br>
-	<input type="text" id = "TxtSquat"><br>
+	<input type="text" id = "TxtSquatValue"> X <select name="SquatReps"> <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtSquat" readonly = "true">  <br>
 	
 	Deadlift: <br>
-	<input type="text" id = "TxtDeadlift"><br>
+	<input type="text" id = "TxtDeadliftValue"> X <select name="DeadliftReps"> <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtDeadlift" readonly = "true">  <br>
 	
 	Body Weight: <br>
 	<input type="text" id = "TxtBodyWeight"><br> <br>
