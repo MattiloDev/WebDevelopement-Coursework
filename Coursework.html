@@ -43,7 +43,7 @@
 	ul {
 	
 	list-style-type: none;
-	background-color: #f2f2f2;
+	background-color: #47474c;
 	margin: 0px;
 	margin-top: 0px;
 	padding: 0;
@@ -58,14 +58,15 @@
 	text-align: center;
 	padding-left:0px;
 	padding: 15px;
-	color: black;
+	color: white;
+	
 	
 	
 	}
 	
 	li a:hover {
 	
-	background-color:bfecff;
+	background-color:8c9b9e;
 	
 	}
 	
@@ -124,6 +125,13 @@
 	
 	}
 	
+	.currentPage {
+	
+	background-color: #09aef4;
+	
+	
+	}
+	
 	
 	
 	
@@ -133,7 +141,7 @@
 	
 	<ul>
 	
-		<li> <a href = "CourseWork.html"> Wilks Calculator </a> </li>
+		<li> <a href = "CourseWork.html" class = "currentPage" > Wilks Calculator </a> </li>
 		<li> <a href = "WilksInfo.html"> What is Wilks </a> </li>
 		<li> <a href = "About.html"> About </a> </li> 
 		<li> <a href = "Settings.html"> Settings </a> </li>
@@ -144,17 +152,21 @@
 	<div id = "MainForm">
 	
 	<h1> Wilks Calculator </h1>
-		
+	
+	<p> Enter your one-rep max for each lift into the form along with your bodyweight to calculate your Powerlifting total and WIlks Score. </p>
+	
+	<p> If you don't know your one-rep max enter your best set into the form and it will be estimated. Esitmations use the Epley Formula </p>
+	
 	<form>
 	
 	Bench Press:<br>
-	<input type="text" id = "TxtBench"><br>
+	<input type="text" id = "TxtBenchValue"> X  <select id="BenchReps" onchange="Bench1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtBench" readonly = "true">  <br>
 	
 	Squat:<br>
-	<input type="text" id = "TxtSquat"><br>
+	<input type="text" id = "TxtSquatValue"> X <select id="SquatReps" onchange="Squat1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtSquat" readonly = "true">  <br>
 	
 	Deadlift: <br>
-	<input type="text" id = "TxtDeadlift"><br>
+	<input type="text" id = "TxtDeadliftValue"> X <select id="DeadliftReps" onchange="Deadlift1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtDeadlift" readonly = "true">  <br>
 	
 	Body Weight: <br>
 	<input type="text" id = "TxtBodyWeight"><br> <br>
@@ -163,7 +175,7 @@
 	
 	<button class = "button" id = "BtnCalculate" type="button"> Calculate Wilks </button> <br> <br>
 	 
-	<form>
+	
 	 
 	Total: <br> 
 	<input type="text" id = "TxtTotal" value="" step = "0.1" readonly = "true"> <br>
@@ -171,7 +183,7 @@
 	Wilks: <br>
 	<input type="text" id = "TxtWilks" value="" step = "0.1" readonly = "true"> <br>
 	
-	</form>
+	
 	
 	</div>
 	
@@ -181,6 +193,48 @@
 	
 
 	var liftTotal= 0.0;
+	
+	function Bench1RM() {
+	
+	var BenchInput = document.getElementById ("TxtBenchValue").value;
+	var BenchRepsInput = document.getElementById("BenchReps").value;
+	var Bench1RM = 0;
+	
+	var EpleyReps = BenchRepsInput/30;
+	
+	Bench1RM = BenchInput*(1+EpleyReps);
+	
+	document.getElementById("TxtBench").value = Bench1RM;
+	
+	}
+	
+	function Squat1RM() {
+	
+	var SquatInput = document.getElementById ("TxtSquatValue").value;
+	var SquatRepsInput = document.getElementById("SquatReps").value;
+	var Squat1RM = 0;
+	
+	var EpleyReps = SquatRepsInput/30;
+	
+	Squat1RM = SquatInput*(1+EpleyReps);
+	
+	document.getElementById("TxtSquat").value = Squat1RM;
+	
+	}
+	
+	function Deadlift1RM() {
+	
+	var DeadliftInput = document.getElementById ("TxtDeadliftValue").value;
+	var DeadliftRepsInput = document.getElementById("DeadliftReps").value;
+	var Deadlift1RM = 0;
+	
+	var EpleyReps = DeadliftRepsInput/30;
+	
+	Deadlift1RM = DeadliftInput*(1+EpleyReps);
+	
+	document.getElementById("TxtDeadlift").value = Deadlift1RM;
+	
+	}
 	
 	function Total() {
 	
@@ -229,18 +283,14 @@
 		wilksValue = 500/CoTotal;
 		
 		var Wilks = parseInt(liftTotal)*parseFloat(wilksValue);
-		var WilksDecimal = WIlks.toFixed(2);
-		document.getElementById ("TxtWilks").setText
+		document.getElementById ("TxtWilks").value = Wilks;
 		
 	}
 	
 	function Test () {
 	
-		var bw = 66;
-		var b = 16.2606339;
-		var bCo = 0.0;
-		bCo = parseFloat(b * bw);
-		document.getElementById ("TxtTotal").value = bCo;
+		var testele = 22;
+		document.getElementById ("TxtTotal").value = testele;
 		
 		
 	}
