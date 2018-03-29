@@ -157,6 +157,10 @@
 	
 	Body Weight: <br>
 	<input type="text" id = "TxtBodyWeight"><br> <br>
+
+	<input type="radio" onclick = "Test()" name="gender" id = "genderMale" value="1"> Male<br>
+
+	<input type="radio" onclick = "Test()" name="gender" value="0" id = "genderFemale"> Female<br>
 	
 	</form>
 	
@@ -174,8 +178,10 @@
 
 	<script>
 	
-	var liftTotal= 0.0;
-	
+	var liftTotal = 0.0;
+	var varGender = 4;
+
+
 	function Bench1RM() {
 	
 	var BenchInput = document.getElementById ("TxtBenchValue").value;
@@ -230,19 +236,40 @@
 		Wilks();
 	
 	}
-	
+
+	function setGender() {
+
+		document.getElementsByName("gender").value = varGender;
+
+	}
+
 	function Wilks() {
 	
 		
 		var wilksValue = 0.0;
 		var bodyWeight = document.getElementById ('TxtBodyWeight').value;
 	
+		if (varGender == 1) {
+
 		var a = -216.0475144;
 		var b = 16.2606339;
 		var c = -0.002388645;
 		var d = -0.00113732;
 		var e = 0.00000701863;
 		var f = 0.00000001291;
+			
+		}
+
+		else if (varGender == 0) {
+
+		var a = 594.31747775582;
+		var b = -27.23842536447;
+		var c = 0.82112226871;
+		var d = -0.00930733913;
+		var e = 0.00004731582;
+		var f = 0.00000009054;
+
+		}
 		
 		var aCo = 0.0000;
 		var bCo = 0.0000;
@@ -271,9 +298,11 @@
 	function Test () {
 	
 		var testele = 22;
-		document.getElementById ("TxtTotal").value = testele;
+		varGender = document.getElementsByName("gender").value 
+		document.getElementById ("TxtTotal").value = varGender;
 		
 	}
+
 
 	document.getElementById("BtnCalculate").addEventListener("click", Total);
 	
