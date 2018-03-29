@@ -4,8 +4,11 @@
 <html>
 	
 	<head>
-	
-	
+		
+		<Title> Wilks Calculator: Home </Title>
+		<meta name ="description" content = "Online Wilks Calculator with 1RM estimations">
+		<meta name = "author" content = "Matthew Hutchings">
+
 	</head>
 	
 	<body>
@@ -79,7 +82,6 @@
 	cursor: pointer;
 	display: block;
 	border: none;
-	margin: 0 auto;
 	font-size: 15px;
 	width: 170px;
 	height: 30px;
@@ -109,13 +111,20 @@
 	
 	
 	}
-	
-	
-	
+
+	#banner {
+
+	float: top;
+	padding-right: 10000px;
+
+	}
 	
 	
 	</style>
-	
+
+	<div id = "banner">
+		<img src = "banner.png" alt = "banner" width="1229" height"139">
+	</div>
 	
 	<ul>
 	
@@ -138,13 +147,13 @@
 	<form>
 	
 	Bench Press:<br>
-	<input type="text" id = "TxtBenchValue"> X  <select id="BenchReps" onchange="Bench1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtBench" readonly = "true">  <br>
+	<input type="text" id = "TxtBenchValue" onchange="Bench1RM()"> X  <select id="BenchReps" onchange="Bench1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtBench" readonly = "true">  <br>
 	
 	Squat:<br>
-	<input type="text" id = "TxtSquatValue"> X <select id="SquatReps" onchange="Squat1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtSquat" readonly = "true">  <br>
+	<input type="text" id = "TxtSquatValue" onchange="Squat1RM()"> X <select id="SquatReps" onchange="Squat1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtSquat" readonly = "true">  <br>
 	
 	Deadlift: <br>
-	<input type="text" id = "TxtDeadliftValue"> X <select id="DeadliftReps" onchange="Deadlift1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtDeadlift" readonly = "true">  <br>
+	<input type="text" id = "TxtDeadliftValue" onchange="Deadlift1RM()"> X <select id="DeadliftReps" onchange="Deadlift1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtDeadlift" readonly = "true">  <br>
 	
 	Body Weight: <br>
 	<input type="text" id = "TxtBodyWeight"><br> <br>
@@ -161,15 +170,10 @@
 	Wilks: <br>
 	<input type="text" id = "TxtWilks" value="" step = "0.1" readonly = "true"> <br>
 	
-	
-	
 	</div>
-	
-	<style>
-	</style>
+
 	<script>
 	
-
 	var liftTotal= 0.0;
 	
 	function Bench1RM() {
@@ -227,7 +231,6 @@
 	
 	}
 	
-	
 	function Wilks() {
 	
 		
@@ -270,28 +273,13 @@
 		var testele = 22;
 		document.getElementById ("TxtTotal").value = testele;
 		
-		
 	}
-	
-	
+
 	document.getElementById("BtnCalculate").addEventListener("click", Total);
-	
-	
 	
 	</script>
 	
-	
-	
-	
-	
-	
-	
-	
 	</body>
-	
-	
-	
-	
 	
 </html>
 	
