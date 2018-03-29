@@ -11,7 +11,7 @@
 
 <style>
 
-body {
+	body {
 	
 	font-family: Arial, Helvetica, sans-serif;	
 	margin: 0px;
@@ -20,10 +20,10 @@ body {
 	}
 	
 	
-	ul {
+	#nav ul {
 	
 	list-style-type: none;
-	background-color: #f2f2f2;
+	background-color: #47474c;
 	margin: 0px;
 	margin-top: 0px;
 	padding: 0;
@@ -31,48 +31,161 @@ body {
 	
 	}
 	
-	li a {
+	#nav li a {
 	
 	text-decoration: none;
 	display:block;
 	text-align: center;
 	padding-left:0px;
 	padding: 15px;
+	color: white;
 	
 	
-	}
-	
-	li a:hover {
-	
-	background-color:bfbfbf;
 	
 	}
 	
-	.active {
+	#nav li a:hover {
+	
+	background-color:8c9b9e;
+	
+	}
+	
+	#nav .active {
 	
 	background-color:00bfff;
 	
 	}
 	
-	li { 
+	#nav li { 
 	
 	font-size: 20px;
 	float: left;
 	
 	}
+	
+	
+	input[type=text], select {
+	
+	padding: 6px 10px;
+	margin: 6px;
+	
+	}
+	
+	.button {
+	
+	background-color: #bfecff;
+	padding: 6px 6px;
+	cursor: pointer;
+	display: block;
+	border: none;
+	margin: 0 auto;
+	font-size: 15px;
+	width: 170px;
+	height: 30px;
+	position: relative;
+	left: 14px;
+
+	}
+	
+	.button:hover {
+	
+	background-color: #76d4fc;
+	
+	}
+	
+	#MainForm {
+	
+	margin: 20px;
+	padding-left: 25px;
+	padding-top: 8px;
+	
+	
+	}
+
+	#deadliftimg {
+
+		float: right;
+		position: relative;
+		padding: 10px;
+		height: auto;
+		width: auto;
+
+	}
+	
+	.currentPage {
+	
+	background-color: #09aef4;
+	
+	
+	}
+
+	ol {
+
+		list-style-type: upper-alpha;
+
+	}
+
+
+	#banner {
+
+		float: top;
+		padding-right: 10000px;
+
+	}
 
 </style>
 
-<ul>
+	<div id = "banner">
+		<img src = "banner.png" alt = "banner" width="1229" height"139">
+	</div>
+
+
+
+	<div id = "nav">
+
+		<ul>
 	
-		<li> <a href = "CourseWork.html"> Wilks Calculator </a> </li>
-		<li> <a href = "WilksInfo.html"> What is Wilks </a> </li>
-		<li> <a href = "About.html"> About </a> </li> 
-		<li> <a href = "Settings.html"> Settings </a> </li>
+			<li> <a href = "CourseWork.html"> Wilks Calculator </a> </li>
+			<li> <a href = "WilksInfo.html" class = "currentPage"> What is Wilks </a> </li>
+			<li> <a href = "About.html"> About </a> </li> 
+			<li> <a href = "Settings.html"> Settings </a> </li>
 		
-</ul>
+		</ul>
+
+	</div>
 
 </body>
 
+<div id = "MainForm"> 
+
+<h1> Wilks and Epley information </h1>
+
+<p> Calculations on this website are based on the Wilks and Epley Formulas </p>
+
+<h3>Wilks Formula:</h3>
+
+<p> The Wilks formula is used in powerlifting competitions to compare lifters across the 3 lifts of the competition bench press, squat and deadlift. <br> <br> The Formula is able to account for Weight and gender to give a fair comparison of the level of different powerlifters. </p>
+
+<div id = "deadliftimg">
+	<img src = "https://powerliftingaustralia.com/wp-content/uploads/2015/01/jeza-uepa-squat-669x272.jpg" alt = "deadlift">
+</div>
+
+<p> The Formula to calculate a Wilks score is as follows:</p> <br>
+
+<img src = "https://wikimedia.org/api/rest_v1/media/math/render/svg/97274a51d2d3213a9ab7f8a98d91fd6eb0c23e81" alt = "500 divided by a+b*x+c*x^2+d*x^3+e*x^4+f*x^5">
+<p> The values used for A-F in the Calculations are:</p>
+
+<ol>
+
+	<li> -216.0475144 </li>
+	<li> 16.2606339 </li>
+	<li> -0.002388645 </li>
+	<li> -0.00113732 </li>
+	<li> 0.00000701863 </li>
+	<li> 0.00000001291 </li>
+
+</ol>
+
+</div>
 
 </html>	
