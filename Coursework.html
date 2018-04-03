@@ -264,6 +264,9 @@
 		wilksValue = 500/CoTotal;
 		
 		var Wilks = parseInt(liftTotal)*parseFloat(wilksValue);
+
+		Wilks = Wilks*1.042;
+
 		document.getElementById ("TxtWilks").value = Wilks;
 		
 	}
