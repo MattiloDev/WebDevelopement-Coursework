@@ -104,7 +104,7 @@
 	
 	
 	}
-	
+
 	.currentPage {
 	
 	background-color: #09aef4;
@@ -131,6 +131,7 @@
 		<li> <a href = "CourseWork.html" class = "currentPage" > Wilks Calculator </a> </li>
 		<li> <a href = "WilksInfo.html"> What is Wilks </a> </li>
 		<li> <a href = "About.html"> About </a> </li> 
+		<li> <a href = "FormGuide.html"> Form Guide </a> </li> 
 		<li> <a href = "Settings.html"> Settings </a> </li>
 		
 	</ul>
@@ -143,26 +144,30 @@
 	<p> Enter your one-rep max for each lift into the form along with your bodyweight to calculate your Powerlifting total and WIlks Score. </p>
 	
 	<p> If you don't know your one-rep max enter your best set into the form and it will be estimated. Esitmations use the Epley Formula </p>
+
+	<p> If you are unsure If your lift is valid check out the <a href = "FormGuide.html"> Form Guide Page </a></p>
 	
-	<form>
+	<form id = "WilksForm" >
 	
-	Bench Press:<br>
+	Bench Press: <br>
 	<input type="text" id = "TxtBenchValue" onchange="Bench1RM()"> X  <select id="BenchReps" onchange="Bench1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtBench" readonly = "true">  <br>
 	
-	Squat:<br>
+	Squat: <br>
 	<input type="text" id = "TxtSquatValue" onchange="Squat1RM()"> X <select id="SquatReps" onchange="Squat1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtSquat" readonly = "true">  <br>
 	
-	Deadlift: <br>
+	Deadlift:  <br>
 	<input type="text" id = "TxtDeadliftValue" onchange="Deadlift1RM()"> X <select id="DeadliftReps" onchange="Deadlift1RM()" > <option value = 1> 1 </option> <option value = 2> 2 </option> <option value = 3> 3 </option> <option value = 4> 4 </option> <option value = 5> 5 </option> <option value = 6> 6 </option> <option value = 7> 7 </option> <option value = 8> 8 </option> <option value = 9> 9 </option> <option value = 10> 10 </option> </select> = <input type ="text" id = "TxtDeadlift" readonly = "true">  <br>
 	
 	Body Weight: <br>
 	<input type="text" id = "TxtBodyWeight"><br> <br>
 	
-	</form>
+	<div id = "buttonContainer">
 	
-	<button class = "button" id = "BtnCalculate" type="button"> Calculate Wilks </button> <br> <br>
-	 
+	<button class = "button" id = "BtnCalculate" type="button"> Calculate Wilks </button> <br>
+
+	<button type="reset" button class = "button" form="WilksForm"> Clear </button> <br>
 	
+	</div>
 	 
 	Total: <br> 
 	<input type="text" id = "TxtTotal" value="" step = "0.1" readonly = "true"> <br>
@@ -170,6 +175,8 @@
 	Wilks: <br>
 	<input type="text" id = "TxtWilks" value="" step = "0.1" readonly = "true"> <br>
 	
+	</form>
+
 	</div>
 
 	<script>
