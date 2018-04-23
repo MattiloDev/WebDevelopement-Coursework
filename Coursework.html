@@ -118,7 +118,21 @@
 	padding-right: 10000px;
 
 	}
-	
+
+	.column {
+    float: left;
+    width: 50%;
+    
+	}
+
+	.columnRight {
+
+    float: right;
+    width: 50%;
+    text-align: center;
+	padding-top: 10%;
+
+	}
 	
 	</style>
 
@@ -136,10 +150,13 @@
 		
 	</ul>
 	
+	<div class = "column">
 	
 	<div id = "MainForm">
 	
 	<h1> Wilks Calculator </h1>
+
+
 	
 	<p> Enter your one-rep max for each lift into the form along with your bodyweight to calculate your Powerlifting total and WIlks Score. </p>
 	
@@ -167,6 +184,7 @@
 
 	<button type="reset" button class = "button" form="WilksForm"> Clear </button> <br>
 	
+
 	</div>
 	 
 	Total: <br> 
@@ -175,9 +193,22 @@
 	Wilks: <br>
 	<input type="text" id = "TxtWilks" value="" step = "0.1" readonly = "true"> <br>
 	
+	</div>
+
 	</form>
 
 	</div>
+
+	<div class ="ColumnRight">
+
+	<p> Your Wilks Score is:</p> <p id = "WilksOut">    </p>
+
+	</div>
+
+
+
+
+
 
 	<script>
 	
@@ -277,6 +308,8 @@
 		document.getElementById ("TxtWilks").value = Wilks;
 		
 	}
+
+	
 	
 	function Test () {
 	
