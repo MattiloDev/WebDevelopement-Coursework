@@ -11,7 +11,7 @@
 
 	</head>
 	
-	<body>
+	<body onload = "readCookie()">
 	
 	<style>
 	
@@ -130,7 +130,7 @@
     float: right;
     width: 50%;
     text-align: center;
-	padding-top: 10%;
+	padding-top: 0%;
 
 	}
 	
@@ -152,7 +152,7 @@
 	
 	<div class = "column">
 	
-	<div id = "MainForm">
+<div id = "MainForm">
 	
 	<h1> Wilks Calculator </h1>
 
@@ -185,13 +185,14 @@
 	<button type="reset" button class = "button" form="WilksForm"> Clear </button> <br>
 	
 
-	</div>
+</div>
 	 
 	Total: <br> 
 	<input type="text" id = "TxtTotal" value="" step = "0.1" readonly = "true"> <br>
 	
 	Wilks: <br>
 	<input type="text" id = "TxtWilks" value="" step = "0.1" readonly = "true"> <br>
+
 	
 	</div>
 
@@ -201,7 +202,7 @@
 
 	<div class ="ColumnRight">
 
-	<p> Your Wilks Score is:</p> <p id = "WilksOut">    </p>
+	<h3>  <h3 id = "WilksOut">    
 
 	</div>
 
@@ -222,7 +223,7 @@
 	
 	var EpleyReps = BenchRepsInput/30;
 	
-	Bench1RM = BenchInput*(1+EpleyReps);
+	Bench1RM = Math.round(BenchInput*(1+EpleyReps));
 	
 	document.getElementById("TxtBench").value = Bench1RM;
 	
@@ -236,7 +237,7 @@
 	
 	var EpleyReps = SquatRepsInput/30;
 	
-	Squat1RM = SquatInput*(1+EpleyReps);
+	Squat1RM = Math.round(SquatInput*(1+EpleyReps));
 	
 	document.getElementById("TxtSquat").value = Squat1RM;
 	
@@ -250,7 +251,7 @@
 	
 	var EpleyReps = DeadliftRepsInput/30;
 	
-	Deadlift1RM = DeadliftInput*(1+EpleyReps);
+	Deadlift1RM = Math.round(DeadliftInput*(1+EpleyReps));
 	
 	document.getElementById("TxtDeadlift").value = Deadlift1RM;
 	
@@ -303,20 +304,51 @@
 		
 		var Wilks = parseInt(liftTotal)*parseFloat(wilksValue);
 
-		Wilks = Wilks*1.042;
+		Wilks = Math.round(Wilks*1.042);
 
 		document.getElementById ("TxtWilks").value = Wilks;
+
+		storeCookie();
 		
+	}
+	
+	function storeCookie() {
+
+		wilksCookieValue  = document.getElementById ("TxtWilks").value
+
+		var currentDate = new Date();
+		var currentDateReadable = currentDate.toDateString();
+
+		var expirydate = new Date();
+		expirydate.setDate(expirydate.getDate()+7);
+		expirydate.toUTCString();
+
+		document.cookie = "dateCookie" + "=" + encodeURIComponent(currentDateReadable)+"; expires="+expirydate;
+		document.cookie = "wilksCookie" + "=" + encodeURIComponent(wilksCookieValue)+"; expires="+expirydate;
+		
+
+		 // alert(document.cookie);
+
 	}
 
-	
-	
-	function Test () {
-	
-		var testele = 22;
-		document.getElementById ("TxtTotal").value = testele;
-		
+	function readCookie() {
+
+		 var cookieArray = document.cookie.split(";");
+
+		 for (var i = 0; i < cookieArray.length; i++) {
+
+			 var namevalueArray = cookieArray[i].trim().split("=");
+
+
+		 }
+		 
+			document.getElementById("WilksOut").innerHTML = "Your Previous wilks score was: " + decodeURIComponent(namevalueArray[1]);
+
+		 
+
 	}
+	
+	
 
 	document.getElementById("BtnCalculate").addEventListener("click", Total);
 	
