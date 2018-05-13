@@ -90,10 +90,19 @@
 
 	}
 	
+	@keyframes buttonHover {
+
+		from {background-color: s#bfecff;}
+		to {background-color: #76d4fc};
+
+	}
+
 	.button:hover {
-	
-	background-color: #76d4fc;
-	
+
+		animation-name: buttonHover;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+
 	}
 	
 	#MainForm {
@@ -341,18 +350,14 @@
 
 		 var cookieArray = document.cookie.split(";");
 
-		for (var i = 0; i < cookieArray.length; i++) {
-
-		// alert(cookieArray[0]);
-
-		}		
+			
 			 var dateValueArray = cookieArray[0].trim().split("=");
 			 var WilksValueArray = cookieArray[1].trim().split("=");
 
 		 
 		 
-		alert(dateValueArray[1]);
-		alert(WilksValueArray[1]);
+		// alert(dateValueArray[1]);
+		// alert(WilksValueArray[1]);
 
 
 	document.getElementById("WilksOut").innerHTML = "Your Previous wilks score was: " + decodeURIComponent(WilksValueArray[1]);
